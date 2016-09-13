@@ -40,14 +40,9 @@ Parallax.prototype.init = function()
 
 	this.$container.bind('mousemove', function(e)
 	{
-		//console.log('move', e.pageX, this.offsetLeft, this);
-		//self.$layers.css('right', - (width - e.pageX) * .08);
-		//self.$layers.css('bottom', - (height - e.pageY) * .04);
-
 		self.$layers.each(function(index, element)
 		{
 			var $this = $(this);
-			//$this.css('right', - (width - e.pageX) * $this.data('ratio'));
 			var x = (width / 2 - e.pageX) * ($this.data('ratioX') || $this.data('ratio')),
 					y = (height / 2 - e.pageY) * ($this.data('ratioY') || $this.data('ratio'));
 			$this.css('-webkit-transform', 'translate3d(' + x + 'px,' + y + 'px,0)');
